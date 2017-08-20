@@ -205,6 +205,7 @@
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label6
             // 
@@ -248,6 +249,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EmpDetails";
             this.Text = "Employee Details";
+            this.Load += new System.EventHandler(this.EmpDetails_Load);
             this.rdbGender.ResumeLayout(false);
             this.rdbGender.PerformLayout();
             this.ResumeLayout(false);

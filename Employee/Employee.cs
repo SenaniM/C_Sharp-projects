@@ -72,7 +72,7 @@ namespace Employee
             }
         }
 
-        public string HairColor
+        public String HairColor
         {
             get
             {
@@ -82,6 +82,11 @@ namespace Employee
             {
                 hairColor = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return String.Format(@"{0}, {1}, {2}, {3}, {4}, {5}", name, dob, gender, isSmoking, houseColor, hairColor);
         }
     }
 }

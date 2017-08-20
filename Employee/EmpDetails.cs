@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Employee
@@ -13,12 +10,24 @@ namespace Employee
     public partial class EmpDetails : Form
 
     {
-        private string[] hairColor;
-        private List<Employee> emps;
+        private String hairColor;
+        private List<Employee> emps;      
 
         public EmpDetails()
         {
+
+            var color = new BindingList<KeyValuePair<string, string>>();
+            color.Add(new KeyValuePair<string, string>("Black", "Black"));
+            color.Add(new KeyValuePair<string, string>("Brown", "Brown"));
+            color.Add(new KeyValuePair<string, string>("White", "White"));
+
             InitializeComponent();
+            emps = new List<Employee>();
+
+            cmbHair.DataSource = color;
+            cmbHair.ValueMember = "Key";
+            cmbHair.DisplayMember = "Value";
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -34,6 +43,7 @@ namespace Employee
             {
                 Color clr = clrDialog.Color;
                 lblHouseClr.BackColor = clr;
+                lblHouseClr.Text = clr.Name;
             }
         }
 
@@ -49,8 +59,9 @@ namespace Employee
                 emp.Gender = 'M';
             }
             emp.IsSmoking = chkSmoke.Checked;
-            // emp.HouseColor = (lblHouseClr).GetContainerControl;
-            emp.HairColor = cmbHair.Text;
+            emp.HouseColor = lblHouseClr.Text;
+            hairColor = cmbHair.SelectedValue.ToString();
+            emp.HairColor = hairColor;
             emps.Add(emp);
             MessageBox.Show("Save complete !");
 
@@ -75,6 +86,33 @@ namespace Employee
                         sr.WriteLine(emp.ToString());
                     }
                 }
+            }
+        }
+
+        private void EmpDetails_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFormFields(this);
+        }
+
+        private void clearFormFields(Control controls)
+        {
+            foreach (Control c in controls.Controls) 
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+                else if (c is RadioButton)
+                    ((RadioButton)c).Checked = false;
+                else if (c is ComboBox)
+                    ((ComboBox)c).SelectedIndex = -1;
+                else if (c is CheckBox)
+                    ((CheckBox)c).Checked = false;
+
+                if (c.HasChildren)
+                    clearFormFields(c);
             }
         }
     }
