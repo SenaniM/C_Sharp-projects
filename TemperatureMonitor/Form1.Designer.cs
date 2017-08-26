@@ -1,6 +1,6 @@
 ﻿namespace TemperatureMonitor
 {
-    partial class Form1
+    partial class formTemp
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnSunny = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRainy = new System.Windows.Forms.Button();
+            this.btnAdhoc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTemp = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -46,27 +46,27 @@
             this.btnSunny.Text = "Sunny";
             this.btnSunny.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnRainy
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(106, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 25);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Rainy";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRainy.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRainy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRainy.Location = new System.Drawing.Point(106, 78);
+            this.btnRainy.Name = "btnRainy";
+            this.btnRainy.Size = new System.Drawing.Size(74, 25);
+            this.btnRainy.TabIndex = 1;
+            this.btnRainy.Text = "Rainy";
+            this.btnRainy.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnAdhoc
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(193, 78);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 25);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ad-hoc";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAdhoc.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdhoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdhoc.Location = new System.Drawing.Point(193, 78);
+            this.btnAdhoc.Name = "btnAdhoc";
+            this.btnAdhoc.Size = new System.Drawing.Size(75, 25);
+            this.btnAdhoc.TabIndex = 2;
+            this.btnAdhoc.Text = "Ad-hoc";
+            this.btnAdhoc.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -90,7 +90,7 @@
             this.lblTemp.TabIndex = 4;
             this.lblTemp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Form1
+            // formTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,11 +98,11 @@
             this.ClientSize = new System.Drawing.Size(280, 136);
             this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAdhoc);
+            this.Controls.Add(this.btnRainy);
             this.Controls.Add(this.btnSunny);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formTemp";
+            this.Text = "Temperature Monitor";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,8 +111,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnSunny;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRainy;
+        private System.Windows.Forms.Button btnAdhoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTemp;
     }
